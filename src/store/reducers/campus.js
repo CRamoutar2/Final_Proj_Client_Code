@@ -7,7 +7,7 @@ const initialState = {
 const campus = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CAMPUS:
-      return {...state, campus: action.payload};
+      return action.payload;
     default:
       return state;
   }
