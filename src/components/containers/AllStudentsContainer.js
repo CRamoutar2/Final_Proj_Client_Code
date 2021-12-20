@@ -1,20 +1,8 @@
-// const AllStudentsContainer = () => {
-//   return (
-//     <h1>All Students View</h1>
-//   );
-// };
-
-// export default AllStudentsContainer;
-
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
-
-import { 
-  fetchAllStudentsThunk,
-  deleteStudentThunk
-} from '../../store/thunks';
-
+import PropTypes from "prop-types";
+import { fetchAllStudentsThunk, deleteStudentThunk } from '../../store/thunks';
 import AllStudentsView from '../views/AllStudentsView';
 
 class AllStudentsContainer extends Component {
@@ -44,8 +32,14 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchAllStudents: () => dispatch(fetchAllStudentsThunk()),
-    deleteStudent: (studentId) => dispatch(deleteStudentThunk(studentId)),
+    deleteStudent: (id) => dispatch(deleteStudentThunk(id)),
   };
 };
 
-export default withRouter(connect(mapState, mapDispatch)(AllStudentsContainer));
+// Type check props;
+AllStudentsContainer.propTypes = {
+  allStudents: PropTypes.array.isRequired,
+  fetchAllStudents: PropTypes.func.isRequired,
+};
+
+export default connect(mapState, mapDispatch)(AllStudentsContainer);
