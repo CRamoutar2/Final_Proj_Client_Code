@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 
 const AllCampusesView = (props) => {
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return (
+      <div style={styles.page}>
+        <Navbar />
+        <h1 style={styles.title}>There are no campuses.</h1>
+      </div>
+    );
   }
 
   return (
