@@ -8,6 +8,13 @@ const AllCampusesView = (props) => {
       <div style={styles.page}>
         <Navbar />
         <h1 style={styles.title}>There are no campuses.</h1>
+        <Link to={`campus/new`} style={styles.heading}>
+          <div style={styles.button}>
+            <p style={styles.heading}>
+              Add New Campus
+            </p>
+          </div>
+        </Link>
       </div>
     );
   }
@@ -26,6 +33,13 @@ const AllCampusesView = (props) => {
           </div>
         ))}
       </div>
+      <Link to={`campus/new`} style={styles.heading}>
+        <div style={styles.button}>
+          <p style={styles.heading}>
+            Add New Campus
+          </p>
+        </div>
+      </Link>
     </div>
   );
 };
@@ -35,6 +49,19 @@ const styles = {
     backgroundColor: '#feeed3',
     minHeight: '100vh',
     color: '#865547',
+  },
+  button: {
+    border: '0 solid black',
+    borderRadius: '24px',
+    textDecoration: 'none',
+    backgroundColor: '#fed287',
+    padding: '1vw',
+    margin: '1vw',
+    color: '#865547',
+    fontFamily: 'Poppins',
+    fontSize: '20px',
+    textAlign: 'center',
+    textDecoration: 'none'
   },
   list: {
     display: 'flex',

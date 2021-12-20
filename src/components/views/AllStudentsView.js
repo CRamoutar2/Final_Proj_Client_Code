@@ -10,7 +10,7 @@ const AllStudentsView = (props) => {
       <div style={styles.page}>
         <Navbar />
         <h1 style={styles.title}>There are no students.</h1>
-        <Link to={`student/new`}>
+        <Link to={`/newstudent`} style={styles.heading}>
           <div style={styles.button}>
             <p style={styles.heading}>
               Add New Student
@@ -39,13 +39,13 @@ const AllStudentsView = (props) => {
         }
         )}
       </div>
-      <Link to={`student/new`}>
-          <div style={styles.button}>
-            <p style={styles.heading}>
-              Add New Student
-            </p>
-          </div>
-        </Link>
+      <Link to={`/newstudent`} style={styles.heading}>
+        <div style={styles.button}>
+          <p style={styles.heading}>
+            Add New Student
+          </p>
+        </div>
+      </Link>
     </div>
   );
 };
