@@ -37,7 +37,7 @@ const mapDispatch = (dispatch) => {
 };
 
 // Type check props;
-AllStudentssContainer.propTypes = {
+AllStudentsContainer.propTypes = {
   allStudents: PropTypes.array.isRequired,
   fetchAllStudents: PropTypes.func.isRequired,
 };
