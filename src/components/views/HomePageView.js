@@ -1,70 +1,66 @@
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar } from './index';
+import Campus from './../assets/school.png';
+import Student from './../assets/graduated.png';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  title: {
-    flexGrow: 1,
-    textAlign: 'left',
-    fontType: 'bold',
-    fontFamily: 'Courier, sans-serif', 
-    fontSize: '35px', 
-    color: '#CDDC39'
-  },
-  appBar:{
-    backgroundColor: '#11153e',
-    shadows: ['none'],
-  },
-  greeting:{
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    width: "50%",
-    margin: "auto",
-  },
-  links:{
-    textDecoration: 'none',
-  }
-
-}));
-
-const HomePageView = () => {
-  const classes = useStyles();
+export default function HomePageView() {
   return (
-    <div className={classes.root}>
-      <AppBar position="static" elevation={0} className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" className={classes.title} color="inherit" >
-            CRUD App
-          </Typography>
-
-          <Link className={classes.links} to={'/campuses'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
-              All Campuses
-            </Button>
-          </Link>
-
-          <Link className={classes.links} to={'/students'} >
-            <Button variant="contained" color="primary">
-              All Students
-            </Button>
-          </Link>
-        </Toolbar>
-      </AppBar>
-      
-      <div className={classes.greeting}><h1>Home Page</h1></div>
+    <div style={styles.page}>
+      <Navbar />
+      <h1 style={styles.title}>Welcome to the</h1>
+      <h1 style={styles.title}>Platform For Managing Students and Campuses</h1>
+      <div style={styles.row}>
+        <Link to={'/campuses'} style={styles.link}>
+          <div style={styles.card}>
+            <img src={Campus} style={styles.image} />
+            <h3>Show all campuses</h3>
+          </div>
+        </Link>
+        <Link to={'/students'} style={styles.link}>
+          <div style={styles.card}>
+            <img src={Student} style={styles.image} />
+            <h3>Show all students</h3>
+          </div>
+        </Link>
+      </div>
     </div>
-  );    
+  )
 }
 
-
-
-
-export default HomePageView;
+const styles = {
+  page: {
+    backgroundColor: '#feeed3',
+    minHeight: '100vh',
+    color: '#865547',
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: '40px'
+  },
+  row: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  card: {
+    borderRadius: '12px',
+    border: '0px solid black',
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    margin: '0 4vw',
+    padding: '2vw',
+    width: '25vw',
+    backgroundColor: '#fdb676',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: '10vw'
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'inherit',
+  },
+}
