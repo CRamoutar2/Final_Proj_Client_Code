@@ -24,9 +24,9 @@ const AllStudentsView = (props) => {
   return (
     <div style={styles.page}>
       <Navbar />
-      <h1 style={styles.title}>All Campuses</h1>
+      <h1 style={styles.title}>All Students</h1>
       <div style={styles.list}>
-        {students.map((student) => {
+        {props.allStudents.map((student) => {
           let name = student.firstname + " " + student.lastname;
           return (
             <div key={student.id} style={styles.container}>

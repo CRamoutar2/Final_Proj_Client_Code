@@ -24,11 +24,13 @@ export default function NewStudentView(props) {
           <div style={styles.row}>
             <label style={styles.label}>Campus ID: </label>
             {/* <input type="text" style={styles.input} name="campusId" onChange ={(e) => handleChange(e)} /> */}
-            <select name="campusId" id="campusId">
+            <select name="campusId" id="campusId" style={styles.input}>
               {props.allCampuses.map((campus) => {
-                <option key={campus.id} value={campus.id}>
-                  {campus.name}
-                </option>
+                return (
+                  <option key={campus.id} value={campus.id}>
+                    {campus.name}
+                  </option>
+                )
               })}
             </select>
           </div>
@@ -71,7 +73,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'start',
-    alignItems: 'center'
   },
   form: {
     borderRadius: '12px',
@@ -95,5 +96,6 @@ const styles = {
   input: {
     padding: '4px',
     margin: '8px',
+    fontFamily: 'Poppins',
   }
 }
