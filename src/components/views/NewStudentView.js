@@ -73,7 +73,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'start',
-    // alignItems: 
   },
   form: {
     borderRadius: '12px',

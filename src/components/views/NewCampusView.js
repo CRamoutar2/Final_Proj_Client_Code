@@ -56,7 +56,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'start',
-    alignItems: 'center'
   },
   form: {
     borderRadius: '12px',
