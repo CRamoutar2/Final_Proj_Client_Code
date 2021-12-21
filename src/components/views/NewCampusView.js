@@ -11,15 +11,15 @@ export default function NewStudentView(props) {
         <div style={styles.questions}>
           <div style={styles.row}>
             <label style={styles.label}>Name: </label>
-            <input type="text" style={styles.input} name="firstname" onChange ={(e) => handleChange(e)} />
+            <input type="text" style={styles.input} name="firstname" required onChange ={(e) => handleChange(e)} />
           </div>
           <div style={styles.row}>
             <label style={styles.label}>Address: </label>
-            <input type="text" style={styles.input} name="lastname" onChange ={(e) => handleChange(e)} />
+            <input type="text" style={styles.input} name="lastname" required onChange ={(e) => handleChange(e)} />
           </div>
           <div style={styles.row}>
             <label style={styles.label}>Description: </label>
-            <input type="text" style={styles.input} name="email" onChange ={(e) => handleChange(e)} />
+            <input type="text" style={styles.input} name="email" required onChange ={(e) => handleChange(e)} />
           </div>
           <div style={styles.row}>
             <label style={styles.label}>Image URL: </label>
