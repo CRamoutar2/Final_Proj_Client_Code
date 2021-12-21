@@ -40,7 +40,6 @@ class NewStudentContainer extends Component {
     };
     if (imageURLValue)
       newStudent.imageURL = imageURLValue;
-    //End of code section
 
     await this.props.newStudent(newStudent);
     this.setState(
