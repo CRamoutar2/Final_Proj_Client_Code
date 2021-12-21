@@ -36,7 +36,8 @@ const styles = {
   },
   title: {
     textAlign: 'center',
-    fontSize: '40px'
+    fontSize: '40px',
+    lineHeight: '42px',
   },
   row: {
     display: 'flex',
