@@ -5,12 +5,12 @@ import Delete from "./../assets/bin.png";
 const AllStudentsView = (props) => {
   const {students, deleteStudent} = props;
 
-  if (!students.length) {
+  if (!props.allStudents.length) {
     return (
       <div style={styles.page}>
         <Navbar />
         <h1 style={styles.title}>There are no students.</h1>
-        <Link to={`/newstudent`} style={styles.heading}>
+        <Link to={`/student/new`} style={styles.heading}>
           <div style={styles.button}>
             <p style={styles.heading}>
               Add New Student
@@ -39,7 +39,7 @@ const AllStudentsView = (props) => {
         }
         )}
       </div>
-      <Link to={`/newstudent`} style={styles.heading}>
+      <Link to={`/student/new`} style={styles.heading}>
         <div style={styles.button}>
           <p style={styles.heading}>
             Add New Student
