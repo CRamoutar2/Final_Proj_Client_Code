@@ -7,36 +7,19 @@ export default function NewStudentView(props) {
     <div style={styles.page}>
       <Navbar />
       <form style={styles.form} onSubmit={(e) => handleSubmit(e)}>
-        <h1 style={styles.title}>Enroll a new student:</h1>
+        <h1 style={styles.title}>Register a new campus:</h1>
         <div style={styles.questions}>
           <div style={styles.row}>
-            <label style={styles.label}>First Name: </label>
+            <label style={styles.label}>Name: </label>
             <input type="text" style={styles.input} name="firstname" onChange ={(e) => handleChange(e)} />
           </div>
           <div style={styles.row}>
-            <label style={styles.label}>Last Name: </label>
+            <label style={styles.label}>Address: </label>
             <input type="text" style={styles.input} name="lastname" onChange ={(e) => handleChange(e)} />
           </div>
           <div style={styles.row}>
-            <label style={styles.label}>Email Address: </label>
+            <label style={styles.label}>Description: </label>
             <input type="text" style={styles.input} name="email" onChange ={(e) => handleChange(e)} />
-          </div>
-          <div style={styles.row}>
-            <label style={styles.label}>Campus ID: </label>
-            {/* <input type="text" style={styles.input} name="campusId" onChange ={(e) => handleChange(e)} /> */}
-            <select name="campusId" id="campusId" style={styles.input}>
-              {props.allCampuses.map((campus) => {
-                return (
-                  <option key={campus.id} value={campus.id}>
-                    {campus.name}
-                  </option>
-                )
-              })}
-            </select>
-          </div>
-          <div style={styles.row}>
-            <label style={styles.label}>GPA: </label>
-            <input type="text" style={styles.input} name="gpa" onChange ={(e) => handleChange(e)} />
           </div>
           <div style={styles.row}>
             <label style={styles.label}>Image URL: </label>
@@ -95,7 +78,6 @@ const styles = {
   },
   input: {
     padding: '4px',
-    margin: '8px',
-    fontFamily: 'Poppins',
+    margin: '4px',
   }
 }
